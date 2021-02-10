@@ -5,7 +5,8 @@ describe('Intern', () => {
         it('Should return the name of an Employee', () => {
             const emp = 'Kevin';
 
-            const result = new Intern('Kevin',123,'fake@fake.com','UNC');
+            const bob = new Intern('Kevin',123,'fake@fake.com','UNC');
+            const result = bob.getName();
 
             expect(result).toEqual(emp);
         });
@@ -15,7 +16,8 @@ describe('Intern', () => {
         it('Should return the ID of an Employee', () => {
             const id = 123;
 
-            const result = new Intern('Kevin',123,'fake@fake.com','UNC');
+            const bob = new Intern('Kevin',123,'fake@fake.com','UNC');
+            const result = bob.getId();
 
             expect(result).toEqual(id);
         });
@@ -25,7 +27,8 @@ describe('Intern', () => {
         it('Should return the email of an Employee', () => {
             const email = 'fake@fake.com';
 
-            const result = new Intern('Kevin',123,'fake@fake.com','UNC');
+            const bob = new Intern('Kevin',123,'fake@fake.com','UNC');
+            const result = bob.getEmail();
 
             expect(result).toEqual(email);
         });
@@ -35,7 +38,8 @@ describe('Intern', () => {
         it('Should return the school of an Intern', () => {
             const school = 'UNC';
 
-            const result = new Intern('Kevin',123,'fake@fake.com','UNC');
+            const bob = new Intern('Kevin',123,'fake@fake.com','UNC');
+            const result = bob.getSchool();
 
             expect(result).toEqual(school);
         });
@@ -45,7 +49,8 @@ describe('Intern', () => {
         it('Should return the role of an employee', () => {
             const role = 'Intern';
 
-            const result = new Intern('Kevin',123,'fake@fake.com','UNC');
+            const bob = new Intern('Kevin',123,'fake@fake.com','UNC');
+            const result = bob.getRole();
 
             expect(result).toEqual(role);
         });

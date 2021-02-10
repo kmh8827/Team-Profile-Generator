@@ -5,7 +5,8 @@ describe('Manager', () => {
         it('Should return the name of an employee', () => {
             const emp = 'Kevin';
 
-            const result = new Manager('Kevin',123,'fake@fake.com',456);
+            const bob = new Manager('Kevin',123,'fake@fake.com',456);
+            const result = bob.getName();
 
             expect(result).toEqual(emp);
         });
@@ -15,7 +16,8 @@ describe('Manager', () => {
         it('Should return the id of an employee', () => {
             const id = 123;
 
-            const result = new Manager('Kevin',123,'fake@fake.com',456);
+            const bob = new Manager('Kevin',123,'fake@fake.com',456);
+            const result = bob.getId();
 
             expect(result).toEqual(id);
         });
@@ -24,7 +26,8 @@ describe('Manager', () => {
     describe('getEmail', () => {
         const email = 'fake@fake.com';
 
-        const result = new Manager('Kevin',123,'fake@fake.com',456);
+        const bob = new Manager('Kevin',123,'fake@fake.com',456);
+        const result = bob.getEmail();
 
         expect(result).toEqual(email);
     });
@@ -33,7 +36,8 @@ describe('Manager', () => {
         it('Should return the role of an employee', () => {
             const role = 'Manager';
 
-            const result = new Manager('Kevin',123,'fake@fake.com',456);
+            const bob = new Manager('Kevin',123,'fake@fake.com',456);
+            const result = bob.getRole();
 
             expect(result).toEqual(role);
         });
@@ -43,7 +47,8 @@ describe('Manager', () => {
         it('Shoudl return the office number of a manager', () => {
             const officeNumber = 456;
 
-            const result = new Manager('Kevin',123,'fake@fake.com',456);
+            const bob = new Manager('Kevin',123,'fake@fake.com',456);
+            const result = bob.getOfficeNumber();
 
             expect(result).toEqual(officeNumber);
         });
