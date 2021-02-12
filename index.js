@@ -70,7 +70,26 @@ addMember = () => {
 addIntern = () => {
     inquirer
         .prompt([
-
+            {
+                type: 'input',
+                name: 'name',
+                message: 'Please enter the Intern Name'
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: 'Please enter the Intern ID'
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'Please enter the Intern Email Address'
+            },
+            {
+                type: 'input',
+                name: 'school',
+                message: 'Please enter the Intern School'
+            }
         ]);
 
     let intern = new Intern();
@@ -81,7 +100,26 @@ addIntern = () => {
 addEngineer = () => {
     inquirer
         .prompt([
-
+            {
+                type: 'input',
+                name: 'name',
+                message: 'Please enter the Engineer Name'
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: 'Please enter the Engineer ID'
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'Please enter the Engineer Email Address'
+            },
+            {
+                type: 'input',
+                name: 'github',
+                message: 'Please enter the Engineer Github Username'
+            }
         ]);
 
     let engineer = new Engineer();
