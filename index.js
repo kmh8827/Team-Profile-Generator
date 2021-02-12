@@ -35,8 +35,8 @@ inquirer
         const email = response.managerEmail;
         const num = response.officeNumber;
 
-        const newMan = new Manager(name, id, email, num);
         // Creates a mangager card
+        const newMan = new Manager(name, id, email, num);
 
         addMember();
     })
@@ -90,11 +90,18 @@ addIntern = () => {
                 name: 'school',
                 message: 'Please enter the Intern School'
             }
-        ]);
+        ]).then(response =>  {
 
-    let intern = new Intern();
+            const name = response.name;
+            const id = response.id;
+            const email = response.email;
+            const school = response.school;
 
-    addMember();
+            // Creates an Intern Card
+            const intern = new Intern(name, id, email, school);
+
+            addMember();
+        });
 }
 
 addEngineer = () => {
@@ -120,9 +127,18 @@ addEngineer = () => {
                 name: 'github',
                 message: 'Please enter the Engineer Github Username'
             }
-        ]);
+        ]).then (response => {
 
-    let engineer = new Engineer();
+            const name = response.name;
+            const id = response.id;
+            const email = response.email;
+            const github = response.github;
 
-    addMember();
+            // Creates an engineer Card
+            let engineer = new Engineer(name, id, email, github);
+
+            addMember();
+        });
+
+
 }
