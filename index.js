@@ -45,8 +45,32 @@ prompt([
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <span class="badge badge-light">${newMan.name}</span>
-    <span class="badge badge-light">${newMan.getRole()}</span>
+
+    <section>
+        <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px">
+        <div class="card-header text-white bg-primary mb-3"><b><h3>${newMan.name}</h3></b><br /><b><h3>${newMan.getRole()}</h3></b></div>
+            <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>
+                            <p class="card-text tableBody">ID: ${newMan.getId()}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="card-text tableBody">E-Mail Address <a href="${newMan.getEmail()}" />${newMan.getEmail()}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="card-text tableBody">Office #: ${newMan.getOfficeNumber()}</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    
     </body>
     </html>
     `
