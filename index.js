@@ -34,46 +34,7 @@ prompt([
     // Creates a mangager Ojbect
     const newMan = new Manager(managerName, managerId, managerEmail, officeNumber);
 
-    const manager = `
-    <!DOCTYPE html>
-    <html lang="en-us">
-    <head>
-    <meta charset="UTF-8" />
-        <title>Team Profile Generator</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-
-    <section>
-        <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px">
-        <div class="card-header text-white bg-primary mb-3"><b><h3>${newMan.name}</h3></b><br /><b><h3>${newMan.getRole()}</h3></b></div>
-            <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
-                <table class="table table-bordered">
-                    <tr>
-                        <td>
-                            <p class="card-text tableBody">ID: ${newMan.getId()}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="card-text tableBody">E-Mail Address <a href="${newMan.getEmail()}" />${newMan.getEmail()}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="card-text tableBody">Office #: ${newMan.getOfficeNumber()}</p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </section>
-    
-    </body>
-    </html>
-    `
+    const manCard = createManCard(newMan);
 
     let body = ``;
     const intern = [];
@@ -82,7 +43,7 @@ prompt([
     addMember();
 
     fs.writeFileSync('index.html', `
-    ${manager}`, err => {
+    ${manCard}`, err => {
         if (err) {
             console.log(err);
             return;
@@ -188,3 +149,58 @@ addEngineer = () => {
 
 
 }
+
+createManCard = (newMan) => {
+    const card =  `
+    <!DOCTYPE html>
+    <html lang="en-us">
+    <head>
+    <meta charset="UTF-8" />
+        <title>Team Profile Generator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+    <section>
+        <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px">
+        <div class="card-header text-white bg-primary mb-3"><b><h3>${newMan.name}</h3></b><br /><b><h3>${newMan.getRole()}</h3></b></div>
+            <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>
+                            <p class="card-text tableBody">ID: ${newMan.getId()}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="card-text tableBody">E-Mail Address <a href="${newMan.getEmail()}" />${newMan.getEmail()}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="card-text tableBody">Office #: ${newMan.getOfficeNumber()}</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    </body>
+    </html>
+    `
+
+    return card;
+
+}
+
+createIntCard = (intern) {
+
+}
+
+createEngCard = (engineer) {
+    
+}
+
