@@ -6,8 +6,9 @@ const Manager = require('../Team-Profile-Generator/lib/Manager');
 
 var { prompt } = require('inquirer');
 
-let interns = [];
-
+let interns = ``;
+let engineers = ``;
+let manager = ``;
 
 prompt([
     {
@@ -37,10 +38,7 @@ prompt([
     // Creates a mangager Ojbect
     const newMan = new Manager(managerName, managerId, managerEmail, officeNumber);
 
-    const manCard = createManCard(newMan);
-
-    let engineer = [];
-
+    createManCard(newMan);
 
     addMember();
   
@@ -107,8 +105,8 @@ addIntern = () => {
 
         // Creates an Intern Object
         const newInt = new Intern(name, id, email, school);
-        internCard = createIntCard(newInt);
-        interns.push(internCard);
+        createIntCard(newInt);
+    
         addMember();
     });
 }
@@ -140,7 +138,8 @@ addEngineer = () => {
         const { name, id, email, github } = response;
 
         // Creates an engineer Object
-        let engineer = new Engineer(name, id, email, github);
+        let newEng = new Engineer(name, id, email, github);
+        createEngCard(newEng)
 
         addMember();
     });
@@ -176,7 +175,7 @@ createManCard = (newMan) => {
 
     `
 
-    return card;
+    manager += card;
 
 }
 
@@ -206,7 +205,7 @@ createIntCard = (newInt) => {
     </div>
     `
 
-    return card;
+    interns += card;
 }
 
 createEngCard = (newEng) => {
@@ -235,7 +234,7 @@ createEngCard = (newEng) => {
     </div>
     `
 
-    return card;
+    engineers += card;
 }
 
 makePage = () => {
@@ -251,7 +250,9 @@ makePage = () => {
     </head>
     <body>
     <section>
-    ${manCard}
+    ${manager}
+    ${interns}
+    ${engineers}
     </section>
     </body>
     </html>`, err => {
