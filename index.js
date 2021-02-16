@@ -149,27 +149,28 @@ addEngineer = () => {
 
 createManCard = (newMan) => {
     const card =  `
-   
-        <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px; margin-top: 10px;">
-        <div class="card-header text-white bg-primary mb-3"><b><h3>${newMan.getName()}</h3></b><br /><b><h3>${newMan.getRole()}</h3></b></div>
-            <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
-                <table class="table table-bordered">
-                    <tr>
-                        <td>
-                            <p class="card-text tableBody">ID: ${newMan.getId()}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="card-text tableBody">E-Mail Address <a href="mailto:${newMan.getEmail()}" />${newMan.getEmail()}</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="card-text tableBody">Office #: ${newMan.getOfficeNumber()}</p>
-                        </td>
-                    </tr>
-                </table>
+        <div class="col-sm-3">
+            <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px; margin-top: 10px;">
+            <div class="card-header text-white bg-primary mb-3"><b><h3>${newMan.getName()}</h3></b><br /><b><h3>${newMan.getRole()}</h3></b></div>
+                <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>
+                                <p class="card-text tableBody">ID: ${newMan.getId()}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="card-text tableBody">E-Mail Address <a href="mailto:${newMan.getEmail()}" />${newMan.getEmail()}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="card-text tableBody">Office #: ${newMan.getOfficeNumber()}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -181,28 +182,30 @@ createManCard = (newMan) => {
 
 createIntCard = (newInt) => {
     const card = `
-    <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px">
-    <div class="card-header text-white bg-primary mb-3"><b><h3>${newInt.getName()}</h3></b><br /><b><h3>${newInt.getRole()}</h3></b></div>
-        <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
-            <table class="table table-bordered">
-                <tr>
-                    <td>
-                        <p class="card-text tableBody">ID: ${newInt.getId()}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p class="card-text tableBody">E-Mail Address <a href="mailto:${newInt.getEmail()}" />${newInt.getEmail()}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p class="card-text tableBody">School: ${newInt.getSchool()}</p>
-                    </td>
-                </tr>
-            </table>
+        <div class="col-sm-3">
+            <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px; margin-top: 10px;">
+            <div class="card-header text-white bg-primary mb-3"><b><h3>${newInt.getName()}</h3></b><br /><b><h3>${newInt.getRole()}</h3></b></div>
+                <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>
+                                <p class="card-text tableBody">ID: ${newInt.getId()}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="card-text tableBody">E-Mail Address <a href="mailto:${newInt.getEmail()}" />${newInt.getEmail()}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="card-text tableBody">School: ${newInt.getSchool()}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
     `
 
     interns += card;
@@ -210,28 +213,31 @@ createIntCard = (newInt) => {
 
 createEngCard = (newEng) => {
     const card = `
-    <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px">
-    <div class="card-header text-white bg-primary mb-3"><b><h3>${newEng.getName()}</h3></b><br /><b><h3>${newEng.getRole()}</h3></b></div>
-        <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
-            <table class="table table-bordered">
-                <tr>
-                    <td>
-                        <p class="card-text tableBody">ID: ${newEng.getId()}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p class="card-text tableBody">E-Mail Address <a href="mailto:${newEng.getEmail()}" />${newEng.getEmail()}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p class="card-text tableBody">Github Profile: <a href="https://github.com/${newEng.getGithub()}" />${newEng.getGithub()}</p>
-                    </td>
-                </tr>
-            </table>
+    <div class="col-sm-3">
+        <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px; margin-top: 10px;">
+        <div class="card-header text-white bg-primary mb-3"><b><h3>${newEng.getName()}</h3></b><br /><b><h3>${newEng.getRole()}</h3></b></div>
+            <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>
+                            <p class="card-text tableBody">ID: ${newEng.getId()}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="card-text tableBody">E-Mail Address <a href="mailto:${newEng.getEmail()}" />${newEng.getEmail()}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="card-text tableBody">Github Profile: <a href="https://github.com/${newEng.getGithub()}" />${newEng.getGithub()}</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
+
     `
 
     engineers += card;
@@ -253,7 +259,9 @@ makePage = () => {
         <h1>My Team</h1>
     </header>
     <section>
-    ${manager} ${interns} ${engineers}
+        <div class="row justify-content-md-center">
+            ${manager} ${interns} ${engineers}
+        </div>
     </section>
     </body>
     </html>`, err => {
