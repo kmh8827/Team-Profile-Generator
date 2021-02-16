@@ -151,7 +151,12 @@ createManCard = (newMan) => {
     const card =  `
         <div class="col-sm-3">
             <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px; margin-top: 10px;">
-            <div class="card-header text-white bg-primary mb-3"><b><h3>${newMan.getName()}</h3></b><br /><b><h3>${newMan.getRole()}</h3></b></div>
+            <div class="card-header text-white bg-primary mb-3">
+                <b><h3>${newMan.getName()}</h3></b>
+                <br />
+                <img src="../Team-Profile-Generator/assets/coffee.png" class="icon">
+                <b><h3>${newMan.getRole()}</h3></b>
+            </div>
                 <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
                     <table class="table table-bordered">
                         <tr>
@@ -184,7 +189,12 @@ createIntCard = (newInt) => {
     const card = `
         <div class="col-sm-3">
             <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px; margin-top: 10px;">
-            <div class="card-header text-white bg-primary mb-3"><b><h3>${newInt.getName()}</h3></b><br /><b><h3>${newInt.getRole()}</h3></b></div>
+            <div class="card-header text-white bg-primary mb-3">
+                <b><h3>${newInt.getName()}</h3></b>
+                <br />
+                <img src="../Team-Profile-Generator/assets/graduation.png" class="icon">
+                <b><h3>${newInt.getRole()}</h3></b>
+            </div>
                 <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
                     <table class="table table-bordered">
                         <tr>
@@ -215,7 +225,12 @@ createEngCard = (newEng) => {
     const card = `
     <div class="col-sm-3">
         <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px; margin-top: 10px;">
-        <div class="card-header text-white bg-primary mb-3"><b><h3>${newEng.getName()}</h3></b><br /><b><h3>${newEng.getRole()}</h3></b></div>
+        <div class="card-header text-white bg-primary mb-3">
+            <b><h3>${newEng.getName()}</h3></b>
+            <br />
+            <img src="../Team-Profile-Generator/assets/glasses.png" class="icon">
+            <b><h3>${newEng.getRole()}</h3></b>
+        </div>
             <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
                 <table class="table table-bordered">
                     <tr>
