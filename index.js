@@ -161,7 +161,7 @@ createManCard = (newMan) => {
                     </tr>
                     <tr>
                         <td>
-                            <p class="card-text tableBody">E-Mail Address <a href="${newMan.getEmail()}" />${newMan.getEmail()}</p>
+                            <p class="card-text tableBody">E-Mail Address <a href="mailto:${newMan.getEmail()}" />${newMan.getEmail()}</p>
                         </td>
                     </tr>
                     <tr>
@@ -192,7 +192,7 @@ createIntCard = (newInt) => {
                 </tr>
                 <tr>
                     <td>
-                        <p class="card-text tableBody">E-Mail Address <a href="${newInt.getEmail()}" />${newInt.getEmail()}</p>
+                        <p class="card-text tableBody">E-Mail Address <a href="mailto:${newInt.getEmail()}" />${newInt.getEmail()}</p>
                     </td>
                 </tr>
                 <tr>
@@ -221,12 +221,12 @@ createEngCard = (newEng) => {
                 </tr>
                 <tr>
                     <td>
-                        <p class="card-text tableBody">E-Mail Address <a href="${newEng.getEmail()}" />${newEng.getEmail()}</p>
+                        <p class="card-text tableBody">E-Mail Address <a href="mailto:${newEng.getEmail()}" />${newEng.getEmail()}</p>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <p class="card-text tableBody">Github Profile: <a href="${newEng.getGithub()}" />${newEng.getEmail()}</p>
+                        <p class="card-text tableBody">Github Profile: <a href="https://github.com/${newEng.getGithub()}" />${newEng.getGithub()}</p>
                     </td>
                 </tr>
             </table>
