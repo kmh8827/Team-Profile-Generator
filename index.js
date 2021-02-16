@@ -6,6 +6,9 @@ const Manager = require('../Team-Profile-Generator/lib/Manager');
 
 var { prompt } = require('inquirer');
 
+let interns = [];
+
+
 prompt([
     {
         type: 'input',
@@ -36,20 +39,11 @@ prompt([
 
     const manCard = createManCard(newMan);
 
-    let body = ``;
-    const intern = [];
-    const engineer = [];
+    let engineer = [];
+
 
     addMember();
-
-    fs.writeFileSync('index.html', `
-    ${manCard}`, err => {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        console.log('File Written Successfully');
-    });
+  
 })
 
 addMember = () => {
@@ -74,10 +68,14 @@ addMember = () => {
         if (add === 'engineer') {
             addEngineer();
         }
-
+        if (add === 'none') {
+            makePage();
+        }
         // create IndexHTML with body
 
     });
+
+    
 
 }
 
@@ -108,9 +106,9 @@ addIntern = () => {
         const { name, id, email, school } = response;
 
         // Creates an Intern Object
-        const intern = new Intern(name, id, email, school);
-
-        // add into body Array
+        const newInt = new Intern(name, id, email, school);
+        internCard = createIntCard(newInt);
+        interns.push(internCard);
         addMember();
     });
 }
@@ -152,20 +150,9 @@ addEngineer = () => {
 
 createManCard = (newMan) => {
     const card =  `
-    <!DOCTYPE html>
-    <html lang="en-us">
-    <head>
-    <meta charset="UTF-8" />
-        <title>Team Profile Generator</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-
-    <section>
+   
         <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px">
-        <div class="card-header text-white bg-primary mb-3"><b><h3>${newMan.name}</h3></b><br /><b><h3>${newMan.getRole()}</h3></b></div>
+        <div class="card-header text-white bg-primary mb-3"><b><h3>${newMan.getName()}</h3></b><br /><b><h3>${newMan.getRole()}</h3></b></div>
             <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
                 <table class="table table-bordered">
                     <tr>
@@ -186,21 +173,92 @@ createManCard = (newMan) => {
                 </table>
             </div>
         </div>
-    </section>
 
-    </body>
-    </html>
     `
 
     return card;
 
 }
 
-createIntCard = (intern) {
+createIntCard = (newInt) => {
+    const card = `
+    <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px">
+    <div class="card-header text-white bg-primary mb-3"><b><h3>${newInt.getName()}</h3></b><br /><b><h3>${newInt.getRole()}</h3></b></div>
+        <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        <p class="card-text tableBody">ID: ${newInt.getId()}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="card-text tableBody">E-Mail Address <a href="${newInt.getEmail()}" />${newInt.getEmail()}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="card-text tableBody">Office #: ${newInt.getSchool()}</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    `
 
+    return card;
 }
 
-createEngCard = (engineer) {
-    
+createEngCard = (newEng) => {
+    const card = `
+    <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px">
+    <div class="card-header text-white bg-primary mb-3"><b><h3>${newEng.getName()}</h3></b><br /><b><h3>${newEng.getRole()}</h3></b></div>
+        <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        <p class="card-text tableBody">ID: ${newEng.getId()}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="card-text tableBody">E-Mail Address <a href="${newEng.getEmail()}" />${newEng.getEmail()}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="card-text tableBody">Office #: ${newEng.getGithub()}</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    `
+
+    return card;
 }
 
+makePage = () => {
+    fs.writeFileSync('index.html', `
+    <!DOCTYPE html>
+    <html lang="en-us">
+    <head>
+    <meta charset="UTF-8" />
+        <title>Team Profile Generator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <section>
+    ${manCard}
+    </section>
+    </body>
+    </html>`, err => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log('File Written Successfully');
+    });
+}
