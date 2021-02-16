@@ -150,7 +150,7 @@ addEngineer = () => {
 createManCard = (newMan) => {
     const card =  `
    
-        <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px">
+        <div class="card border-success bg-light mb-3" style="max-width: 18rem; margin-left: 10px; margin-top: 10px;">
         <div class="card-header text-white bg-primary mb-3"><b><h3>${newMan.getName()}</h3></b><br /><b><h3>${newMan.getRole()}</h3></b></div>
             <div class="card-body text-black bg-white mb-3" style="padding: 10px; margin: 20px">
                 <table class="table table-bordered">
@@ -197,7 +197,7 @@ createIntCard = (newInt) => {
                 </tr>
                 <tr>
                     <td>
-                        <p class="card-text tableBody">Office #: ${newInt.getSchool()}</p>
+                        <p class="card-text tableBody">School: ${newInt.getSchool()}</p>
                     </td>
                 </tr>
             </table>
@@ -226,7 +226,7 @@ createEngCard = (newEng) => {
                 </tr>
                 <tr>
                     <td>
-                        <p class="card-text tableBody">Office #: ${newEng.getGithub()}</p>
+                        <p class="card-text tableBody">Github Profile: <a href="${newEng.getGithub()}" />${newEng.getEmail()}</p>
                     </td>
                 </tr>
             </table>
@@ -250,9 +250,7 @@ makePage = () => {
     </head>
     <body>
     <section>
-    ${manager}
-    ${interns}
-    ${engineers}
+    ${manager} ${interns} ${engineers}
     </section>
     </body>
     </html>`, err => {
