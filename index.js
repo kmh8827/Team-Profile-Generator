@@ -35,7 +35,7 @@ prompt([
 ]).then(response => {
     const { managerName, managerId, managerEmail, officeNumber } = response;
 
-    // Creates a mangager Ojbect
+    // Creates a new Manager
     const newMan = new Manager(managerName, managerId, managerEmail, officeNumber);
 
     createManCard(newMan);
@@ -43,7 +43,7 @@ prompt([
     addMember();
   
 })
-
+// Asks user if they want to add an Engineer or Intern to their team, otherwise it creates the HTML page to display team
 addMember = () => {
 
     prompt([
@@ -76,7 +76,7 @@ addMember = () => {
     
 
 }
-
+// Creates a new Intern
 addIntern = () => {
     prompt([
         {
@@ -110,7 +110,7 @@ addIntern = () => {
         addMember();
     });
 }
-
+// Creates a new Engineer
 addEngineer = () => {
     prompt([
         {
@@ -146,7 +146,7 @@ addEngineer = () => {
 
 
 }
-
+// Creates a Manager Card and adds it to the managers variable
 createManCard = (newMan) => {
     const card =  `
         <div class="col-sm-3">
@@ -184,7 +184,7 @@ createManCard = (newMan) => {
     manager += card;
 
 }
-
+// Creates an Intern card and adds it to the interns variable
 createIntCard = (newInt) => {
     const card = `
         <div class="col-sm-3">
@@ -220,7 +220,7 @@ createIntCard = (newInt) => {
 
     interns += card;
 }
-
+// Creates an Engineer card and adds it to the engineers variable
 createEngCard = (newEng) => {
     const card = `
     <div class="col-sm-3">
@@ -257,7 +257,7 @@ createEngCard = (newEng) => {
 
     engineers += card;
 }
-
+// Creates the HTML page
 makePage = () => {
     fs.writeFileSync('index.html', `
     <!DOCTYPE html>
@@ -275,7 +275,7 @@ makePage = () => {
     </header>
     <section>
         <div class="row justify-content-md-center">
-            ${manager} ${interns} ${engineers}
+            ${manager} ${engineers} ${interns}
         </div>
     </section>
     </body>
