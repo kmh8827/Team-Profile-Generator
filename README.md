@@ -7,7 +7,7 @@ Deployed Application: https://kmh8827.github.io/Team-Profile-Generator/
 &nbsp;  
 ### Description  
 &nbsp;  
-This program creates a team of people at a company including a Manager, Engineers and Interns and gives some basic information about them such as their email address or ID Number  
+This program creates a team of people at a company including a Manager, Engineers and Interns and gives some basic information about them such as their email address or ID. Number  
 &nbsp;  
 &nbsp;  
 ## Table of Contents  
